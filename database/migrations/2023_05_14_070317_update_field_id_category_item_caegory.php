@@ -14,7 +14,7 @@ class UpdateFieldIdCategoryItemCaegory extends Migration
     public function up()
     {
         Schema::table('category', function (Blueprint $table) {
-            $table->integer('id_category_item')->unsigned()->nullable()->change();
+            $table->integer('id_category_item')->nullable();
         });
     }
 

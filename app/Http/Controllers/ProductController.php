@@ -48,6 +48,117 @@ class ProductController extends Controller
         if (!empty($arrayImgae)) {
             $product->image = substr_replace($arrayImgae, "", -1);
         }
+
+        //THÔNG SÓ KỸ THUẬT
+        if ($request->has('dongCPU')) {
+            $product->dongCPU = $request->dongCPU;
+        }
+        if ($request->has('congNgheCPU')) {
+            $product->congNgheCPU = $request->congNgheCPU;
+        }
+        if ($request->has('maCPU')) {
+            $product->maCPU = $request->maCPU;
+        }
+        if ($request->has('tocDoCPU')) {
+            $product->tocDoCPU = $request->tocDoCPU;
+        }
+        if ($request->has('TanSoTuborToiDa')) {
+            $product->TanSoTuborToiDa = $request->TanSoTuborToiDa;
+        }
+        if ($request->has('soLoiCPU')) {
+            $product->soLoiCPU = $request->soLoiCPU;
+        }
+        if ($request->has('soluong')) {
+            $product->soluong = $request->soluong;
+        }
+        if ($request->has('boNhoDem')) {
+            $product->boNhoDem = $request->boNhoDem;
+        }
+        if ($request->has('dungLuongRAM')) {
+            $product->dungLuongRAM = $request->dungLuongRAM;
+        }
+        if ($request->has('loaiRAM')) {
+            $product->loaiRAM = $request->loaiRAM;
+        }
+        if ($request->has('tocDoBusRAM')) {
+            $product->tocDoBusRAM = $request->tocDoBusRAM;
+        }
+
+        if ($request->has('hoTroRAMToiDa')) {
+            $product->hoTroRAMToiDa = $request->hoTroRAMToiDa;
+        }
+        if ($request->has('kheCamRAM')) {
+            $product->kheCamRAM = $request->kheCamRAM;
+        }
+        if ($request->has('dungLuongOCung')) {
+            $product->dungLuongOCung = $request->dungLuongOCung;
+        }
+        if ($request->has('loaiOCung')) {
+            $product->loaiOCung = $request->loaiOCung;
+        }
+        if ($request->has('chuanGiaoTiepOCung')) {
+            $product->chuanGiaoTiepOCung = $request->chuanGiaoTiepOCung;
+        }
+        if ($request->has('kheOCungMoRong')) {
+            $product->kheOCungMoRong = $request->kheOCungMoRong;
+        }
+        if ($request->has('cardDoHoai')) {
+            $product->cardDoHoai = $request->cardDoHoai;
+        }
+        if ($request->has('cardTichHop')) {
+            $product->cardTichHop = $request->cardTichHop;
+        }
+        if ($request->has('kichThuocManHinh')) {
+            $product->kichThuocManHinh = $request->kichThuocManHinh;
+        }
+        if ($request->has('tangSoQuet')) {
+            $product->tangSoQuet = $request->tangSoQuet;
+        }
+        if ($request->has('CongNgheManHinh')) {
+            $product->CongNgheManHinh = $request->CongNgheManHinh;
+        }
+        if ($request->has('ketNoiKhongGiay')) {
+            $product->ketNoiKhongGiay = $request->ketNoiKhongGiay;
+        }
+        if ($request->has('thongSoLanWireless')) {
+            $product->thongSoLanWireless = $request->thongSoLanWireless;
+        }
+        if ($request->has('congGiaoTiep')) {
+            $product->congGiaoTiep = $request->congGiaoTiep;
+        }
+        if ($request->has('webcam')) {
+            $product->webcam = $request->webcam;
+        }
+        if ($request->has('denBanPhim')) {
+            $product->denBanPhim = $request->denBanPhim;
+        }
+        if ($request->has('tinhNangDatBiet')) {
+            $product->tinhNangDatBiet = $request->tinhNangDatBiet;
+        }
+        if ($request->has('heDieuHanh')) {
+            $product->heDieuHanh = $request->heDieuHanh;
+        }
+        if ($request->has('thongSoPin')) {
+            $product->thongSoPin = $request->thongSoPin;
+        }
+        if ($request->has('kichThuoc')) {
+            $product->kichThuoc = $request->kichThuoc;
+        }
+        if ($request->has('trongLuong')) {
+            $product->trongLuong = $request->trongLuong;
+        }
+        if ($request->has('mauSac')) {
+            $product->mauSac = $request->mauSac;
+        }
+        if ($request->has('chatLieu')) {
+            $product->chatLieu = $request->chatLieu;
+        }
+        if ($request->has('phuKien')) {
+            $product->phuKien = $request->phuKien;
+        }
+        if ($request->has('content')) {
+            $product->content = $request->content;
+        }
         $product->save();
         return redirect()->route('Product.list')->with('success', 'thêm thành công');
     }
@@ -91,7 +202,115 @@ class ProductController extends Controller
                 }
             }
         }
+        if ($request->has('dongCPU')) {
+            $product->dongCPU = $request->dongCPU;
+        }
+        if ($request->has('congNgheCPU')) {
+            $product->congNgheCPU = $request->congNgheCPU;
+        }
+        if ($request->has('maCPU')) {
+            $product->maCPU = $request->maCPU;
+        }
+        if ($request->has('tocDoCPU')) {
+            $product->tocDoCPU = $request->tocDoCPU;
+        }
+        if ($request->has('TanSoTuborToiDa')) {
+            $product->TanSoTuborToiDa = $request->TanSoTuborToiDa;
+        }
+        if ($request->has('soLoiCPU')) {
+            $product->soLoiCPU = $request->soLoiCPU;
+        }
+        if ($request->has('soluong')) {
+            $product->soluong = $request->soluong;
+        }
+        if ($request->has('boNhoDem')) {
+            $product->boNhoDem = $request->boNhoDem;
+        }
+        if ($request->has('dungLuongRAM')) {
+            $product->dungLuongRAM = $request->dungLuongRAM;
+        }
+        if ($request->has('loaiRAM')) {
+            $product->loaiRAM = $request->loaiRAM;
+        }
+        if ($request->has('tocDoBusRAM')) {
+            $product->tocDoBusRAM = $request->tocDoBusRAM;
+        }
 
+        if ($request->has('hoTroRAMToiDa')) {
+            $product->hoTroRAMToiDa = $request->hoTroRAMToiDa;
+        }
+        if ($request->has('kheCamRAM')) {
+            $product->kheCamRAM = $request->kheCamRAM;
+        }
+        if ($request->has('dungLuongOCung')) {
+            $product->dungLuongOCung = $request->dungLuongOCung;
+        }
+        if ($request->has('loaiOCung')) {
+            $product->loaiOCung = $request->loaiOCung;
+        }
+        if ($request->has('chuanGiaoTiepOCung')) {
+            $product->chuanGiaoTiepOCung = $request->chuanGiaoTiepOCung;
+        }
+        if ($request->has('kheOCungMoRong')) {
+            $product->kheOCungMoRong = $request->kheOCungMoRong;
+        }
+        if ($request->has('cardDoHoai')) {
+            $product->cardDoHoai = $request->cardDoHoai;
+        }
+        if ($request->has('cardTichHop')) {
+            $product->cardTichHop = $request->cardTichHop;
+        }
+        if ($request->has('kichThuocManHinh')) {
+            $product->kichThuocManHinh = $request->kichThuocManHinh;
+        }
+        if ($request->has('tangSoQuet')) {
+            $product->tangSoQuet = $request->tangSoQuet;
+        }
+        if ($request->has('CongNgheManHinh')) {
+            $product->CongNgheManHinh = $request->CongNgheManHinh;
+        }
+        if ($request->has('ketNoiKhongGiay')) {
+            $product->ketNoiKhongGiay = $request->ketNoiKhongGiay;
+        }
+        if ($request->has('thongSoLanWireless')) {
+            $product->thongSoLanWireless = $request->thongSoLanWireless;
+        }
+        if ($request->has('congGiaoTiep')) {
+            $product->congGiaoTiep = $request->congGiaoTiep;
+        }
+        if ($request->has('webcam')) {
+            $product->webcam = $request->webcam;
+        }
+        if ($request->has('denBanPhim')) {
+            $product->denBanPhim = $request->denBanPhim;
+        }
+        if ($request->has('tinhNangDatBiet')) {
+            $product->tinhNangDatBiet = $request->tinhNangDatBiet;
+        }
+        if ($request->has('heDieuHanh')) {
+            $product->heDieuHanh = $request->heDieuHanh;
+        }
+        if ($request->has('thongSoPin')) {
+            $product->thongSoPin = $request->thongSoPin;
+        }
+        if ($request->has('kichThuoc')) {
+            $product->kichThuoc = $request->kichThuoc;
+        }
+        if ($request->has('trongLuong')) {
+            $product->trongLuong = $request->trongLuong;
+        }
+        if ($request->has('mauSac')) {
+            $product->mauSac = $request->mauSac;
+        }
+        if ($request->has('chatLieu')) {
+            $product->chatLieu = $request->chatLieu;
+        }
+        if ($request->has('phuKien')) {
+            $product->phuKien = $request->phuKien;
+        }
+        if ($request->has('content')) {
+            $product->content = $request->content;
+        }
         $product->save();
         return redirect()->route('Product.list')->with('success', 'Sửa thành công');
     }

@@ -12,6 +12,8 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NhapXuatKhoController;
+use App\Http\Controllers\CategoryGroupController;
+use App\Http\Controllers\CategoryItemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +50,30 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('/delete-category/{id}', 'Delete')->name('Category.Delete');
     });
+
+    Route::controller(CategoryGroupController::class)->group(function () {
+        Route::get('/list-CategoryGroup', 'List')->name('CategoryGroup.list');
+        Route::get('/create-CategoryGroup', 'Create')->name('CategoryGroup.create');
+        Route::post('/create-CategoryGroup', 'CreatePost')->name('CategoryGroup.createPost');
+
+        Route::get('/edit-CategoryGroup/{id}', 'Edit')->name('CategoryGroup.edit');
+        Route::post('/edit-CategoryGroup/{id}', 'EditPost')->name('CategoryGroup.EditPost');
+
+        Route::get('/delete-CategoryGroup/{id}', 'Delete')->name('CategoryGroup.Delete');
+    });
+
+    Route::controller(CategoryItemController::class)->group(function () {
+        Route::get('/list-CategoryItem', 'List')->name('CategoryItem.list');
+        Route::get('/create-CategoryItem', 'Create')->name('CategoryItem.create');
+        Route::post('/create-CategoryItem', 'CreatePost')->name('CategoryItem.createPost');
+
+        Route::get('/edit-CategoryItem/{id}', 'Edit')->name('CategoryItem.edit');
+        Route::post('/edit-CategoryItem/{id}', 'EditPost')->name('CategoryItem.EditPost');
+
+        Route::get('/delete-CategoryItem/{id}', 'Delete')->name('CategoryItem.Delete');
+    });
+
+
     Route::controller(UserController::class)->group(function () {
         Route::get('/list-user', 'list')->name('User.list');
 

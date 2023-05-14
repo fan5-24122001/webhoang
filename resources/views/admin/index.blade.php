@@ -32,7 +32,7 @@
 
     <!-- Main CSS-->
     <link href="admin/css/theme.css" rel="stylesheet" media="all">
-
+    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
 </head>
 
 <body class="animsition">
@@ -131,13 +131,13 @@
 
                         <li>
                             <a href="{{ route('Product.list') }}">
-                                <i class="fas fa-chart-bar"></i>Data</a>
+                                <i class="fas fa-chart-bar"></i>Tổng kết</a>
 
                         <li>
 
                         <li>
                             <a href="{{ route('Product.list') }}">
-                                <i class="fas fa-chart-bar"></i>product</a>
+                                <i class="fas fa-chart-bar"></i>Sản Phẩm</a>
 
                         <li>
                         <li>

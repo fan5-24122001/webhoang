@@ -8,7 +8,7 @@
                     <strong>Thêm thể loại</strong>
                 </div>
                 <div class="card-body card-block">
-                    <form action="{{route('Category.createPost')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="{{route('CategoryGroup.createPost')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     @csrf
                         <div class="row form-group">
                             <div class="col col-md-3">
@@ -19,18 +19,6 @@
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Nhóm loại sản phẩm</label>
-                            </div>
-                            <div class="col-12 col-md-9">
-                                <select name="id_category_item" id="">
-                                    @foreach ($CategoryItem as $item)
-                                        <option value="{{$item->id}}">{{$item->name}}</option>
-                                    @endforeach
-                                </select>
                             </div>
                         </div>
                         <div class="card-footer">

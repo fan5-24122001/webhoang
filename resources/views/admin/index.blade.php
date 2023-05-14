@@ -130,41 +130,49 @@
 
 
                         <li>
-                            <a href="{{route('Product.list')}}">
+                            <a href="{{ route('Product.list') }}">
                                 <i class="fas fa-chart-bar"></i>Data</a>
 
                         <li>
 
                         <li>
-                            <a href="{{route('Product.list')}}">
+                            <a href="{{ route('Product.list') }}">
                                 <i class="fas fa-chart-bar"></i>product</a>
 
                         <li>
                         <li>
-                            <a href="{{route('NhapXuatKho.list')}}">
+                            <a href="{{ route('NhapXuatKho.list') }}">
                                 <i class="fas fa-chart-bar"></i>Quản lý kho</a>
 
                         <li>
-                            <a href="{{route('Category.list')}}">
-                                <i class="fas fa-map-marker-alt"></i>category</a>
+                            <a href="{{ route('CategoryGroup.list') }}">
+                                <i class="fas fa-map-marker-alt"></i>Nhóm loại sản phẩm</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('CategoryItem.list') }}">
+                                <i class="fas fa-map-marker-alt"></i>Loại sản phẩm</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('Category.list') }}">
+                                <i class="fas fa-map-marker-alt"></i>Nhãn hàng</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Đơn hàng</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="{{route('admin.listBill')}}">Danh sách hóa đơn</a>
+                                    <a href="{{ route('admin.listBill') }}">Danh sách hóa đơn</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('admin.historyBill')}}">Lịch sử hóa đơn</a>
+                                    <a href="{{ route('admin.historyBill') }}">Lịch sử hóa đơn</a>
                                 </li>
 
                             </ul>
                         </li>
-                        <li>
-                            <a href="{{route('Category.list')}}">
+                        {{-- <li>
+                            <a href="{{ route('Category.list') }}">
                                 <i class="fas fa-map-marker-alt"></i>Quản Lý User</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
             </div>
@@ -180,7 +188,8 @@
                         <div class="header-wrap">
                             <form class="form-header" action="{{ route('admin.search') }}" method="GET">
                                 @csrf
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Tìm kiếm sản phẩm ở đây" />
+                                <input class="au-input au-input--xl" type="text" name="search"
+                                    placeholder="Tìm kiếm sản phẩm ở đây" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
@@ -196,7 +205,8 @@
                                             </div>
                                             <div class="mess__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="admin/images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                    <img src="admin/images/icon/avatar-06.jpg"
+                                                        alt="Michelle Moreno" />
                                                 </div>
                                                 <div class="content">
                                                     <h6>Michelle Moreno</h6>
@@ -301,32 +311,36 @@
                                 <div class="account-wrap">
 
                                     @guest
-                                    @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                    </li>
-                                    @endif
-
-
+                                        @if (Route::has('login'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                            </li>
+                                        @endif
                                     @else
-                                    <li class="dropdown header-profile">
+                                        <li class="dropdown header-profile">
 
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            <a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                                <polyline points="16 17 21 12 16 7"></polyline>
-                                                <line x1="21" y1="12" x2="9" y2="12"></line>
-                                            </svg>
-                                            <span>
-                                                {{ __('Logout') }}
-                                            </span>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
-                                        </a>
+                                                <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg"
+                                                    class="text-danger" width="18" height="18"
+                                                    viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                                    <line x1="21" y1="12" x2="9" y2="12">
+                                                    </line>
+                                                </svg>
+                                                <span>
+                                                    {{ __('Logout') }}
+                                                </span>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </a>
 
-                                    </li>
+                                        </li>
                                     @endguest
 
 

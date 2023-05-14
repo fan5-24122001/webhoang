@@ -22,6 +22,18 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Nhóm loại sản phẩm</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <select name="id_category_item" id="">
+                                    @foreach ($CategoryItem as $item)
+                                        <option value="{{$item->id}}" {{ ($item->id == $category->id_category_item ) ? 'selected' : ''}} >{{$item->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Sửa
@@ -29,7 +41,7 @@
                         </div>
                     </form>
                 </div>
-                
+
             </div>
         </div>
     </div>
